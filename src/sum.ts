@@ -1,4 +1,4 @@
-import assert from 'assert';
+// import assert from 'assert';
 import {
   makeIntArrayFromString,
   minMax,
@@ -13,14 +13,15 @@ import {
  * @return {string}
  */
 export function sum(arg1: string, arg2: string) {
-  assert(typeof arg1 === 'string', 'first arg should be a string');
-  assert(typeof arg2 === 'string', 'second arg should be a string');
-  let sum = new Uint8Array();
-  let remain = 0;
+  // assert(typeof arg1 === 'string', 'first arg should be a string');
+  // assert(typeof arg2 === 'string', 'second arg should be a string');
 
   const { min: minString, max: maxString } = minMax(arg1, arg2);
   const minNumber = makeIntArrayFromString(minString).reverse();
   const maxNumber = makeIntArrayFromString(maxString).reverse();
+
+  let sum = new Uint8Array();
+  let remain = 0;
 
   for (let i = 0; i < maxNumber.length; i++) {
     const minInt = minNumber[i];
