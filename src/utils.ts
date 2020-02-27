@@ -35,8 +35,8 @@ export function makeIntArrayFromString(bigIntString: string): Uint8Array {
 
   for (let i = 0; i < count; i += 1) {
     const char = charArray[i];
-    const int = parseInt(char, 10);
-    intArray[i] = int;
+    const intNumber = parseInt(char, 10);
+    intArray[i] = intNumber;
   }
 
   return intArray;
@@ -59,16 +59,19 @@ export function printIntArray(intArray: Uint8Array): string {
 /**
  * Push int to array
  * @param intArray
- * @param int
+ * @param intNumber
  * @return new int array
  */
-export function appendIntArray(intArray: Uint8Array, int: number): Uint8Array {
+export function appendIntArray(
+  intArray: Uint8Array,
+  intNumber: number
+): Uint8Array {
   const newLength = intArray.length + 1;
   const newIntArray = new Uint8Array(newLength);
 
   newIntArray.set(intArray);
   const lastIndex = newLength - 1;
-  newIntArray[lastIndex] = int;
+  newIntArray[lastIndex] = intNumber;
 
   return newIntArray;
 }
